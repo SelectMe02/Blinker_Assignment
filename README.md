@@ -1,6 +1,8 @@
 
 
 
+![](images/Blinker_Mapping using Arduino.png)
+
 Arduino
 
 Task 1: 주기적으로 LED를 켭니다. 이 주기는 Taskscheduler를 통해 제어합니다.
