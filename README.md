@@ -3,6 +3,10 @@
 
 ![](images/Blinker_Mapping_Using_Arduino.png)
 
+
+신호등 구현을 위해 빨간, 노란, 초록 총 3개의 LED가 사용되었고 각각의 LED는 9번, 10번, 11번 핀에 연결되어 있습니다. 그 다음은 빨간불만 계속 켜져있는 Emergency 상태, 모든 LED가 깜빡거리는 Blinking 상태, 기본 기능을 껐다 켜는 On/Off 상태 총 3가지 상태 변화를 위해 스위치 3개를 각 3번, 4번, 5번에 연결했습니다. 마지막으로 LED 밝기 세기 조절을 위해 가변저항을 준비하였고, 가변 저항은 A0핀에 연결했습니다.
+
+
 Arduino
 
 Task 1: 주기적으로 LED를 켭니다. 이 주기는 Taskscheduler를 통해 제어합니다.
