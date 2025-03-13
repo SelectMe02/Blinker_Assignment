@@ -1,7 +1,7 @@
 
 
 
-![](images/Blinker_Mapping using Arduino.png)
+![](images/Blinker_Mapping_Using_Arduino.png)
 
 Arduino
 
