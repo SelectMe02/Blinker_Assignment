@@ -287,55 +287,96 @@ void adjustBrightness() {
     sendStatusToWeb(); // 현재 상태를 웹으로 전송
 }
 
+// 스위치 1 - 인터럽트 서비스 루틴 (ISR)
+// redMode(Emergency Mode) 활성화
 void switch1_ISR() {
-    // 첫 번째 스위치가 눌렸을 때 빨간색 모드를 전환하는 함수 - 인터럽트 서비스
-    redMode = !redMode; // 현재 모드 반전
-    Serial.println(redMode ? "Red Mode: ON" : "Red Mode: OFF"); // 현재 상태 출력
+    if (!redMode) { // 현재 redMode가 비활성화되어 있다면
+        redMode = true;  // redMode 활성화
+        blinkMode = false;  // blinkMode 비활성화
+        powerOff = false;  // 전원 OFF 모드 비활성화
 
-    // 빨간색 모드가 켜지면 빨간 LED만 켜고, 아니면 기존 동작을 재시작
-    if (redMode) {
-        analogWrite(red, 255);
-        analogWrite(yellow, 0);
-        analogWrite(green, 0);
-    } else {
-        tRed.restart(); // 기존 타이머를 다시 시작하여 원래 동작 복원
+        // blinkMode가 실행 중일 수 있으므로 blink 타이머 비활성화
+        tBlinkAll.disable();
+    } else { 
+        redMode = false; // redMode가 활성화 상태였다면 비활성화
+    }
+    
+    Serial.println(redMode ? "Red Mode: ON" : "Red Mode: OFF");
+
+    if (redMode) { 
+        // redMode가 활성화되었을 때 LED 설정
+        analogWrite(red, 255);   // 빨간색 LED 켜기 (최대 밝기)
+        analogWrite(yellow, 0);  // 노란색 LED 끄기
+        analogWrite(green, 0);   // 초록색 LED 끄기
+    } else { 
+        
+        tRed.restart();
     }
 
-    sendStatusToWeb(); // 변경된 상태를 웹으로 전송
+    // 웹으로 현재 상태 전송
+    sendStatusToWeb();
 }
 
+// 스위치 2 - 인터럽트 서비스 루틴 (ISR)
+// blinkMode(깜빡임 모드) 활성화화
 void switch2_ISR() {
-    // 두 번째 스위치가 눌렸을 때 깜빡임 모드를 전환하는 함수- 인터럽트 서비스 루틴
-    blinkMode = !blinkMode; // 현재 모드 반전
-    Serial.println(blinkMode ? "Blink Mode: ON" : "Blink Mode: OFF"); // 현재 상태 출력
+    if (!blinkMode) { // 현재 blinkMode가 비활성화되어 있다면
+        blinkMode = true;  // blinkMode 활성화
+        redMode = false;  // redMode 비활성화
+        powerOff = false;  // 전원 OFF 모드 비활성화
 
-    // 깜빡임 모드가 켜지면 모든 LED를 끄고 깜빡이는 동작을 활성화
-    if (blinkMode) {
+        // redMode가 실행 중일 수 있으므로 redMode 타이머 비활성화
+        tRed.disable();
+    } else { 
+        blinkMode = false; // blinkMode가 활성화 상태였다면 비활성화
+    }
+    
+    Serial.println(blinkMode ? "Blink Mode: ON" : "Blink Mode: OFF");
+
+    if (blinkMode) { 
+        // blinkMode가 활성화되었을 때 모든 LED 끄기
         analogWrite(red, 0);
         analogWrite(yellow, 0);
         analogWrite(green, 0);
-        tBlinkAll.enable(); // 깜빡임 타이머 활성화
-    } else {
-        tBlinkAll.disable(); // 깜빡임 타이머 비활성화
-        tRed.restart(); // 기존 타이머를 다시 시작하여 원래 동작 복원
+        
+        tBlinkAll.enable();
+    } else { 
+        
+        tBlinkAll.disable();
+        tRed.restart();
     }
 
-    sendStatusToWeb(); // 변경된 상태를 웹으로 전송
+    // 웹으로 현재 상태 전송
+    sendStatusToWeb();
 }
 
+// 스위치 3 - 인터럽트 서비스 루틴 (ISR)
+// 전원을 끄고(powerOff Mode) 활성화
 void switch3_ISR() {
-    // 세 번째 스위치가 눌렸을 때 전원 상태를 전환하는 함수 - 인터럽트 서비스 루틴
-    powerOff = !powerOff; // 현재 상태 반전
-    Serial.println(powerOff ? "Power OFF" : "Power ON"); // 현재 상태 출력
+    if (!powerOff) { // 현재 powerOff가 비활성화되어 있다면
+        powerOff = true;  // 전원 OFF 모드 활성화
+        redMode = false;  // redMode 비활성화
+        blinkMode = false;  // blinkMode 비활성화
 
-    // 전원이 꺼졌을 경우 모든 LED를 OFF, 다시 켜졌을 경우 기존 동작 재시작
-    if (powerOff) {
+        
+        tRed.disable();
+        tBlinkAll.disable();
+    } else { 
+        powerOff = false; // powerOff가 활성화 상태였다면 다시 켜기
+    }
+    // 현재 전원 상태를 출력
+    Serial.println(powerOff ? "Power OFF" : "Power ON");
+
+    if (powerOff) { 
+        // powerOff가 활성화되었을 때 모든 LED 끄기
         analogWrite(red, 0);
         analogWrite(yellow, 0);
         analogWrite(green, 0);
-    } else {
-        tRed.restart(); // 기존 타이머를 다시 시작하여 원래 동작 복원
+    } else { 
+        
+        tRed.restart();
     }
 
-    sendStatusToWeb(); // 변경된 상태를 웹으로 전송
+    // 웹으로 현재 상태 전송
+    sendStatusToWeb();
 }
