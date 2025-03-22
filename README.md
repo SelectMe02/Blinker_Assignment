@@ -14,12 +14,12 @@
 | Saka   | ![](images/Saka_Sign.png) |
 | OK     | ![](images/OK_Sign.png) |
 | Open   | ![](images/Handopen_Sign.png) |
-| OneUp  | ![](images/OneUp_Sign.png) |
-| OneDown | ![](images/OneDown_Sign.png) |
-| TwoUp  | ![](images/TwoUp_Sign.png) |
-| TwoDown | ![](images/TwoDown_Sign.png) |
-| FourUp | ![](images/FourUp_Sign.png) |
-| FourDown | ![](images/FourDown_Sign.png) |
+| OneUp  | ![](images/OneUp.png) |
+| OneDown | ![](images/OneDown.png) |
+| TwoUp  | ![](images/TwoUp.png) |
+| TwoDown | ![](images/TwoDown.png) |
+| FourUp | ![](images/FourUp.png) |
+| FourDown | ![](images/FourDown.png) |
 
 ---
 
