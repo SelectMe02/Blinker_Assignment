@@ -21,7 +21,6 @@
 | FourUp | ![](images/FourUp.png) |
 | FourDown | ![](images/FourDown.png) |
 
----
 
 #### 기능 설명:
 
