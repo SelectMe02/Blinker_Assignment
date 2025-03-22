@@ -9,7 +9,7 @@
 
 ### 손동작 설명
 | **손동작** | Saka | OK | Open| OneUp | OneDown | TwoUp | TwoDown | FourUp | FourDown |
-| **이미지** |  |  |  |  |  |  |  |  |  |  |  
+| **이미지** |![](images/Saka_Sign.png) | ![](images/OK_Sign.png) | ![](images/Handopen_Sign.png) | ![](images/OneUp_Sign.png) | ![](images/OneDown_Sign.png) | ![](images/TwoUp_Sign.png) | ![](images/TwoDown_Sign.png) | ![](images/FourUp_Sign.png) | ![](images/FourDown_Sign.png) | 
 | **기능** | 새끼 손가락과 엄지만 펴져 있는 상태 - 비상 모드 진입 및 해제 | 오케이 사인 - Blink Mode 진입 및 해제 | 다섯 손가락을 모두 편 상태 - Power Off /On 기능 | 검지 손가락만 편 상태 - Red led Duration 증가 | 검지 손가락만 펴서 내린 상태 - Red led Duration 감소 | 검지와 중지만 편 상태 - Yellow led Duration 증가 | 검지와 중지만 펴서 내린 상태 - Yellow led Duration 감소 | 엄지 빼고 모두 핀 상태 - Green led Duration 증가 | 엄지 빼고 모두 펴서 내린 상태 - Green led Duration 감소|
 
 **이때 OneDown, TwoDown, FourDown과 같이 손가락을 내리는 제스쳐는 손등을 카메라를 보도록 향해야 함.**
