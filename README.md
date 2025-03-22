@@ -1,3 +1,20 @@
+## **(확장)  임베디드 통신 시스템 Assignment 2 - Blink Control by Handshape**
+
+### 프로젝트 동작 목적
+
+기존의 버튼, 슬라이더, 가변저항 위주의 신호등 제어 방식을 비전 기반 제스처 인식으로 확장하는 것을 목표로 합니다.
+웹캠 영상을 HandPose로 분석해 특정 손동작을 감지하면, 시리얼 통신을 통해 아두이노로 명령을 전송합니다.
+
+아두이노 측에서는 TaskSerialInput과 TaskSerialOutput 테스크를 통해 아래와 같은 다양한 기능을 실시간으로 제어할 수 있습니다
+
+### 손동작 설명
+| **손동작** | Saka | OK | Open| OneUp | OneDown | TwoUp | TwoDown | FourUp | FourDown |
+| **이미지** |  |  |  |  |  |  |  |  |  |  |  
+| **기능** | 새끼 손가락과 엄지만 펴져 있는 상태 - 비상 모드 진입 및 해제 | 오케이 사인 - Blink Mode 진입 및 해제 | 다섯 손가락을 모두 편 상태 - Power Off /On 기능 | 검지 손가락만 편 상태 - Red led Duration 증가 | 검지 손가락만 펴서 내린 상태 - Red led Duration 감소 | 검지와 중지만 편 상태 - Yellow led Duration 증가 | 검지와 중지만 펴서 내린 상태 - Yellow led Duration 감소 | 엄지 빼고 모두 핀 상태 - Green led Duration 증가 | 엄지 빼고 모두 펴서 내린 상태 - Green led Duration 감소|
+
+**이때 OneDown, TwoDown, FourDown과 같이 손가락을 내리는 제스쳐는 손등을 카메라를 보도록 향해야 함.**
+
+
 
 ## **(기존) 임베디드 통신 시스템 Assignment 1 - Blink Control with Arduino**
 
