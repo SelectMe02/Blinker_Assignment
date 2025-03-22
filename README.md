@@ -55,7 +55,8 @@ if (command.startsWith("BTN2")) {
 }
 if (command.startsWith("BTN3")) {
     switch3_ISR();  // 버튼3 ISR 직접 호출
-}```
+}
+```
 
 
 ## 정리: 수정된 코드의 주요 확장 기능
