@@ -7,10 +7,34 @@
 
 아두이노 측에서는 TaskSerialInput과 TaskSerialOutput 테스크를 통해 아래와 같은 다양한 기능을 실시간으로 제어할 수 있습니다
 
-### 손동작 설명
-| **손동작** | Saka | OK | Open| OneUp | OneDown | TwoUp | TwoDown | FourUp | FourDown |
-| **이미지** |![](images/Saka_Sign.png) | ![](images/OK_Sign.png) | ![](images/Handopen_Sign.png) | ![](images/OneUp_Sign.png) | ![](images/OneDown_Sign.png) | ![](images/TwoUp_Sign.png) | ![](images/TwoDown_Sign.png) | ![](images/FourUp_Sign.png) | ![](images/FourDown_Sign.png) | 
-| **기능** | 새끼 손가락과 엄지만 펴져 있는 상태 - 비상 모드 진입 및 해제 | 오케이 사인 - Blink Mode 진입 및 해제 | 다섯 손가락을 모두 편 상태 - Power Off /On 기능 | 검지 손가락만 편 상태 - Red led Duration 증가 | 검지 손가락만 펴서 내린 상태 - Red led Duration 감소 | 검지와 중지만 편 상태 - Yellow led Duration 증가 | 검지와 중지만 펴서 내린 상태 - Yellow led Duration 감소 | 엄지 빼고 모두 핀 상태 - Green led Duration 증가 | 엄지 빼고 모두 펴서 내린 상태 - Green led Duration 감소|
+#### ✋ 손동작 설명
+
+| 손동작 | 이미지 |
+|--------|--------|
+| Saka   | ![](images/Saka_Sign.png) |
+| OK     | ![](images/OK_Sign.png) |
+| Open   | ![](images/Handopen_Sign.png) |
+| OneUp  | ![](images/OneUp_Sign.png) |
+| OneDown | ![](images/OneDown_Sign.png) |
+| TwoUp  | ![](images/TwoUp_Sign.png) |
+| TwoDown | ![](images/TwoDown_Sign.png) |
+| FourUp | ![](images/FourUp_Sign.png) |
+| FourDown | ![](images/FourDown_Sign.png) |
+
+---
+
+#### 기능 설명:
+
+- **Saka**: 새끼손가락과 엄지만 펴져 있는 상태 → **비상 모드 진입 및 해제**
+- **OK**: 오케이 사인 → **Blink Mode 진입 및 해제**
+- **Open**: 다섯 손가락을 모두 펼친 상태 → **Power Off / On 기능**
+- **OneUp**: 검지만 펴져 있음 → `Red led Duration` **증가**
+- **OneDown**: 검지만 내림 → `Red led Duration` **감소**
+- **TwoUp**: 검지와 중지만 펴짐 → `Yellow led Duration` **증가**
+- **TwoDown**: 검지와 중지만 내림 → `Yellow led Duration` **감소**
+- **FourUp**: 엄지 빼고 모두 핀 상태 → `Green led Duration` **증가**
+- **FourDown**: 엄지 빼고 모두 내린 상태 → `Green led Duration` **감소**
+
 
 **이때 OneDown, TwoDown, FourDown과 같이 손가락을 내리는 제스쳐는 손등을 카메라를 보도록 향해야 함.**
 
