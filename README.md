@@ -11,7 +11,7 @@
 
 | 손동작 | 이미지 |
 |--------|--------|
-| Saka   | ![](images/Saka_Sign.png) |
+| Shaka   | ![](images/Saka_Sign.png) |
 | OK     | ![](images/OK_Sign.png) |
 | Open   | ![](images/Handopen_Sign.png) |
 | OneUp  | ![](images/OneUp.png) |
@@ -24,7 +24,7 @@
 
 #### 기능 설명:
 
-- **Saka**: 새끼손가락과 엄지만 펴져 있는 상태 → **비상 모드 진입 및 해제**
+- **Shaka**: 새끼손가락과 엄지만 펴져 있는 상태 → **비상 모드 진입 및 해제**
 - **OK**: 오케이 사인 → **Blink Mode 진입 및 해제**
 - **Open**: 다섯 손가락을 모두 펼친 상태 → **Power Off / On 기능**
 - **OneUp**: 검지만 펴져 있음 → `Red led Duration` **증가**
